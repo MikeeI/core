@@ -9,6 +9,56 @@ This file provides context for AI coding agents (Claude Code, GitHub Copilot, Cu
 - **Test framework:** PHPUnit, JavaScript tests (Node), Acceptance tests (Behat)
 - **CI system:** GitHub Actions
 
+## Fork & Upstream Contribution Intent
+
+- Official upstream: [owncloud/core](https://github.com/owncloud/core).
+- This checkout is the [MikeeI/core](https://github.com/MikeeI/core) fork, not an independently owned product.
+- The canonical upstream branch is `master` at `upstream/master`.
+- The fork supports evidence-backed upstream issues, comments, and pull requests.
+- `ISSUES.md` provides the compact finding overview and global ID allocator.
+- `issues/ISSUE-NNN.md` owns the complete durable record for one root cause.
+- `FORMAT.md` owns research, drafting, implementation authorization, approval, and publication rules.
+- Prefer small, well-scoped corrections with clear maintainer or user value.
+- Never choose `Authorized-Work` or `Publication-Target` on the user's behalf.
+- Keep fork-only context, ledgers, configuration, and personal commits out of upstream contribution diffs.
+- Apply `skill-fork-contribution-tracking` for ledger, lifecycle, branch, and upstream handoff work.
+- Apply `skill-maintainer-communication` before external issues, pull requests, reviews, comments, or discussions.
+- Apply `skill-semantic-compression-3` when authoring or restructuring tracking content.
+
+## Branch Roles
+
+- `master` mirrors `upstream/master` and remains free of fork-only context and source changes.
+- `personal` owns this fork's fork-specific `AGENTS.md` sections, `FORMAT.md`, `ISSUES.md`, and `issues/` tracking state.
+- Each upstream contribution uses a separate branch based on the current `upstream/master`.
+- Contribution branches contain only the authorized source change and its focused verification.
+- Rebase contribution branches before pushing and never create merge commits.
+- Every commit must be GPG-signed and carry a DCO sign-off with `git commit -S -s`.
+- Publication to official upstream requires approval of the exact current draft and target.
+
+## Project Ownership Map
+
+- `lib/` owns the core PHP library and private and public APIs.
+- `core/` owns the Classic web application, login, file list, and core UI behavior.
+- `apps/` owns bundled applications.
+- `ocs/`, `ocs-provider/`, and `ocm-provider/` own OCS and Open Cloud Mesh provider endpoints.
+- `config/` owns configuration samples and defaults.
+- `tests/` owns unit, JavaScript, integration, and Behat acceptance tests.
+- `build/`, `Makefile`, Composer manifests, and Yarn configuration own build automation and dependencies.
+- `l10n/` owns translations, which must be submitted through Transifex rather than pull requests.
+
+## Finding and Contribution Ledger
+
+- At the start of every agent session, read `ISSUES.md` before repository work.
+- `ISSUES.md` owns the global `Next finding ID` allocator and compact cross-finding overview.
+- Each `issues/ISSUE-NNN.md` owns one finding's state, evidence, drafts, and next action.
+- `FORMAT.md` is authoritative for research, drafting, implementation boundaries, and publication format.
+- Search existing findings and upstream work before creating a new record.
+- New findings start with `State: Investigating`, `Authorized-Work: Not-Selected`, and `Publication-Target: Not-Selected`.
+- The user selects `Authorized-Work` for each finding and publication requires approval of the exact draft and target.
+- Run the read-only validator bundled with `skill-fork-contribution-tracking` after every ledger mutation.
+- Keep fork-only `AGENTS.md` sections, `FORMAT.md`, `ISSUES.md`, and `issues/` out of every upstream contribution diff.
+- Do not record security vulnerabilities in public issue records; use https://security.owncloud.com.
+
 ## Architecture & Key Paths
 - `lib/` - Core PHP library (private and public APIs)
 - `core/` - Core app (login, file list, etc.)
