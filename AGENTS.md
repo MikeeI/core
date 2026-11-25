@@ -58,6 +58,7 @@ This file provides context for AI coding agents (Claude Code, GitHub Copilot, Cu
 - Run the read-only validator bundled with `skill-fork-contribution-tracking` after every ledger mutation.
 - Keep fork-only `AGENTS.md` sections, `FORMAT.md`, `ISSUES.md`, and `issues/` out of every upstream contribution diff.
 - Do not record security vulnerabilities in public issue records; use https://security.owncloud.com.
+- Keep security findings in the local, git-excluded dossier `security/`; never in the contribution ledger, never in a pushed commit, and never in an upstream contribution diff.
 
 ## Architecture & Key Paths
 - `lib/` - Core PHP library (private and public APIs)
